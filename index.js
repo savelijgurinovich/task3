@@ -11,17 +11,14 @@ if (gameMoves.length % 2 === 0) {
     process.exit();
 }
 
-
 const key = crypto.randomBytes(32);
-// Функция для вычисления HMAC
 function hmac(key, data) {
   return crypto.createHmac('sha256', key).update(data.toString()).digest('hex');
 }
 
-// Функция для выбора хода
 function chooseMove() {
   console.log('Please choose your move:');
-  gameMoves.forEach((move, index) => console.log(`${index + 1} - ${move}`)); // выводим "меню"
+  gameMoves.forEach((move, index) => console.log(`${index + 1} - ${move}`)); 
   console.log('0 - Exit');
   console.log('help - table\n');
  
